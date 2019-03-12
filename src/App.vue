@@ -1,28 +1,29 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app :dark="isDark">
+    <Navbar v-on:changeTheme="isDark = !isDark"/>
+    <v-content>
+      <!--Ususally all of the page content goes here, headers and footers will be elsewhere -->
+      <router-view></router-view>
+    </v-content>
+    <Footer/>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export default {
-  name: 'app',
+  name: "App",
   components: {
-    HelloWorld
+    Navbar,
+    Footer
+  },
+  data() {
+    return {
+      isDark: false
+      //
+    };
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
