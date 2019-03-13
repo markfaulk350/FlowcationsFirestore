@@ -57,7 +57,7 @@ export default {
       myData.forEach(place => {
         let latLng = new google.maps.LatLng(place.lat, place.lng);
         // REMEBER TO CHANGE THE LINK WHEN YOU DEPLOY
-        let contentString = `<h1><a href="http://localhost:8080/#/location/${place.id}">${place.name}</a></h1><br><h3 style="color:black">Status: ${place.status}</h3>`;
+        let contentString = `<h1><a href="https://faulknermark.com/#/location/${place.id}">${place.name}</a></h1><br><h3 style="color:black">Status: ${place.status}</h3>`;
         let infoWindow = new google.maps.InfoWindow({
           content: contentString
         });
