@@ -35,7 +35,7 @@
                   <div class="headline text-xs-center">360&deg; Interactive Site Briefings</div>
                 </v-card-title>
                 <v-card-text>
-                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
+                  This is the updated Page PLZ Work. Nulla volutpat tincidunt ornare.
                   Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                   Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
                 </v-card-text>

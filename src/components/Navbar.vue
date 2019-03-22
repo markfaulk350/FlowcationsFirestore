@@ -88,6 +88,12 @@ export default {
           text: "How-To",
           route: "/howto",
           color: "green--text"
+        },
+        {
+          icon: "360",
+          text: "Orientate",
+          route: "/orient",
+          color: "green--text"
         }
       ]
     };

@@ -80,8 +80,7 @@
                 </v-btn>
                 <v-spacer></v-spacer>
                 <v-btn @click="dialog = false" flat class="mx-0 mt-3 red darken-4 white--text">
-                  <span>fuck</span>
-                  <span class="font-weight-light">&nbsp;off</span>
+                  <span>cancel</span>
                 </v-btn>
               </v-layout>
             </v-container>
@@ -154,11 +153,17 @@ export default {
         .catch(error => console.log(error));
 
         this.$refs.form.reset();
+        this.locationName = "";
+        this.lon = null;
+        this.lat = null;
+        this.siteStatus = null;
+        this.description = "";
+        this.vr = "";
         this.dialog = !this.dialog;
 
         }
       else {
-          console.log("the form has not been validated and will not submit");
+          //console.log("the form has not been validated and will not submit");
       }
     }
   }

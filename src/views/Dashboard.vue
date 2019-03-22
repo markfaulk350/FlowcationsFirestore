@@ -26,7 +26,7 @@
           </v-flex>
           <v-flex xs6 sm1 md1>
             <div>
-              <v-btn v-on:click="deleteLocation(location._id)" fab small class="red--text">X</v-btn>
+              <v-btn v-on:click="deleteLocation(location.id)" fab small class="red--text">X</v-btn>
             </div>
           </v-flex>
         </v-layout>
@@ -49,12 +49,26 @@ export default {
     };
   },
   methods: {
+    deleteLocation(locationID) {
+      db.collection("flowcations")
+        .doc(locationID)
+        .delete()
+        .then(doc => {
+          //console.log("Document successfully deleted!");
+          this.flowcations = this.flowcations.filter(location => location.id !== locationID);
+        })
+        .catch(function(error) {
+          //console.error("Error removing document: ", error);
+        });
+    },
     findDate(date) {
       return moment(date * 1000).format("MMMM Do YYYY");
     }
   },
   created() {
     db.collection("flowcations")
+      .orderBy("created", "desc")
+      .limit(30)
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
@@ -99,4 +113,5 @@ export default {
   border-left: 4px solid #ffdc00;
   border-right: 4px solid #ffdc00;
 }
+
 </style>

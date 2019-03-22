@@ -42,6 +42,11 @@ export default new Router({
       path: '/location/:location_id',
       name: 'Location',
       component: () => import('./views/Location.vue')
-    }
+    },
+    {
+      path: '/orient',
+      name: 'Orientation',
+      component: () => import('./views/Orientation.vue')
+    },
   ]
 })

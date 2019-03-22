@@ -1,5 +1,5 @@
 <template>
-  <v-footer class="pa-3">
+  <v-footer v-if="this.$route.name != 'Explore'" class="pa-3">
     <v-layout v-resize="onResize" column align-center justify-center>{{ windowSize }}</v-layout>
     
     <div>&copy; {{ new Date().getFullYear() }} </div>
@@ -17,7 +17,7 @@ export default {
       }
     };
   },
-  mounted() {
+  created() {
     this.onResize();
   },
   methods: {
